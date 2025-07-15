@@ -1,0 +1,80 @@
+/* css/dashboard.css */
+
+.dashboard-card { /* Re-using the .form-card style from styles.css */
+    margin-bottom: 25px; /* Spacing between cards */
+}
+.dashboard-card h2 { /* Specific h2 styling for dashboard cards */
+    font-size: 1.4rem;
+}
+
+
+#user-info p, #rewards-info p, #subscription-status p {
+    font-size: 1em;
+    color: #555;
+    margin: 8px 0;
+}
+#user-info span, #rewards-info span.highlight, #subscription-status span.highlight {
+    font-weight: 600;
+    color: #e8491d;
+}
+#rewards-info p small {
+    display: block;
+    color: #777;
+    font-size: 0.9em;
+}
+
+#active-subscription {
+    margin-bottom: 15px;
+}
+#subscription-status .btn-secondary {
+    font-size: 0.95em;
+    padding: 8px 15px;
+}
+
+#rental-history h2 {
+    margin-bottom: 15px;
+}
+#rental-history-table th, #rental-history-table td {
+    font-size: 0.95em;
+    padding: 10px;
+}
+#rental-history-table td button {
+    font-size: 0.85em;
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: #5c677d; /* A slightly different secondary */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#rental-history-table td button:hover {
+    background-color: #35424a;
+}
+
+
+#manage-rentals {
+    text-align: center;
+}
+#manage-rentals .btn-primary#new-rental-link {
+    padding: 12px 25px;
+    font-size: 1.05em;
+}
+
+/* Responsive adjustments for dashboard */
+@media (max-width: 768px) {
+    .dashboard-card {
+        padding: 20px;
+    }
+    .dashboard-card h2 {
+        font-size: 1.2rem;
+    }
+    #rental-history-table th, #rental-history-table td {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+    #rental-history-table td button {
+        font-size: 0.8em;
+        padding: 4px 8px;
+    }
+}

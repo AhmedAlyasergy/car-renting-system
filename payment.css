@@ -1,0 +1,87 @@
+/* css/payment.css */
+
+#payment-section h2 { /* Already styled by .form-card h2 in styles.css */
+    text-align: center;
+}
+#order-summary-details {
+    background-color: #f6f8fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #e0e0e0;
+}
+#order-summary-details p {
+    margin: 8px 0;
+    font-size: 1em;
+    color: #444;
+}
+#order-summary-details p strong {
+    color: #35424a;
+}
+#order-summary-details .eco-info { /* Inherited from styles.css */
+    font-weight: 500;
+}
+#order-summary-details .discount-amount { /* Inherited from styles.css */
+    font-weight: 500;
+}
+#order-summary-details .total-due strong {
+    font-size: 1.2em;
+    color: #e8491d;
+}
+
+
+#paymentForm h2, #paymentForm h3 { /* For payment method choice heading */
+    color: #35424a;
+    margin-bottom: 15px;
+    font-size: 1.2em; /* Slightly smaller than main form heading */
+}
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.payment-option {
+    background-color: #f9f9f9;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    display: flex; /* Align radio and text */
+    align-items: center;
+}
+.payment-option:hover {
+    background-color: #f0f2f5;
+}
+.payment-option input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #e8491d;
+    vertical-align: middle;
+}
+
+.payment-option.selected { /* Add this class with JS */
+    border-color: #e8491d;
+    background-color: #fff5f2; /* Light orange */
+}
+
+
+#card-details-group { /* This is a .form-group-collapsible */
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+}
+#card-details-group h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+    color: #35424a;
+}
+
+#paymentForm .btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    margin-top: 20px;
+}

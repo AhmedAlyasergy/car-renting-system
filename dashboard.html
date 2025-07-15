@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Car Renting System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="car-list.html">Available Cars</a></li>
+                <li><a href="subscriptions.html">Our Subscriptions</a></li>
+                <li><a href="logout.php">Logout</a></li> <!-- Assumes logout.php handles session termination -->
+            </ul>
+        </nav>
+    </header>
+    <main class="container page-container">
+        <section id="user-info" class="dashboard-card">
+            <h2>Your Information (UserID: <span id="dashboard-user-id">N/A</span>)</h2>
+            <p>Name: <span id="dashboard-username"></span></p>
+            <p>Email: <span id="dashboard-email"></span></p>
+        </section>
+
+        <section id="rewards-info" class="dashboard-card">
+            <h2>Your Rewards</h2>
+            <p>Current Points: <span id="reward-points" class="highlight">0</span> points (Conceptual)</p>
+            <p><small>Earn points with every booking and redeem them for discounts!</small></p>
+        </section>
+
+        <section id="subscription-status" class="dashboard-card">
+            <h2>Your Subscription</h2>
+            <div id="active-subscription">
+                <p>Status: <span id="subscription-name" class="highlight">No active subscription.</span> (Conceptual)</p>
+            </div>
+            <a href="subscriptions.html" class="btn-secondary">View Subscription Plans</a>
+        </section>
+
+        <section id="rental-history" class="dashboard-card">
+            <h2>Your Rental History (Rentals Table)</h2>
+            <div class="table-responsive">
+                <table id="rental-history-table">
+                    <thead>
+                        <tr>
+                            <th>RentalID</th>
+                            <th>Car (Model)</th>
+                            <th>CarID</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Total Price</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rental history will be populated here by JS -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="no-rental-history" style="display:none; text-align:center; padding: 10px;">You have no past rentals.</p>
+        </section>
+        <section id="manage-rentals" class="dashboard-card">
+            <h2>Manage Rentals</h2>
+            <a href="car-list.html" class="btn-primary" id="new-rental-link">Create New Rental</a>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Car Renting System</p>
+    </footer>
+</body>
+</html>

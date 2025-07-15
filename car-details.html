@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details</title> <!-- Title will be dynamic -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/car-details.css">
+</head>
+<body>
+    <header>
+        <h1>Car Details</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="car-list.html">Car List</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="container page-container">
+        <section id="car-info-details">
+            <h2 id="car-model-title">Car Model</h2> <!-- Dynamic -->
+            
+            <div class="car-main-layout">
+                <div class="car-image-container">
+                    <img id="car-image-detail" src="images/placeholder-car.png" alt="Car Image"> <!-- Dynamic -->
+                    <div id="eco-friendly-info-detail" style="display:none;">
+                         <span class="eco-badge-detail">Eco-Friendly</span>
+                         <p id="eco-discount-info-detail" class="discount-info-detail"></p>
+                    </div>
+                </div>
+                
+                <div class="car-purchase-info">
+                    <div class="car-specs">
+                        <h3>Specifications:</h3>
+                        <p><strong>Brand:</strong> <span id="car-brand-detail">N/A</span></p>
+                        <p><strong>Model:</strong> <span id="car-model-spec">N/A</span></p>
+                        <p><strong>Year:</strong> <span id="car-year-detail">N/A</span></p>
+                        <p><strong>Category:</strong> <span id="car-category-detail">N/A</span></p>
+                        <p><strong>Fuel Type:</strong> <span id="car-fuel-detail">N/A</span></p>
+                        <p><strong>Seating Capacity:</strong> <span id="car-capacity-detail">N/A</span> Seats</p>
+                        <p><strong>Transmission:</strong> <span id="car-transmission-detail">N/A</span></p>
+                    </div>
+                    <p id="car-description-detail">Detailed description of the car goes here.</p>
+                    <p id="car-price-detail" class="price-highlight">Price: $<span id="price-value-detail">0</span> per day</p>
+                    <button id="rent-button-detail" class="btn-primary rent-now-button">Rent Now</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="car-reviews-section">
+            <h3>Customer Reviews</h3>
+            <div id="reviews-list">
+                <!-- Reviews will be populated by JS -->
+            </div>
+            <!-- Conceptual: Add Review Form (for logged-in users who rented this car) -->
+            <div id="add-review-form-container" style="margin-top: 20px; display: none;">
+                 <h4>Leave a Review</h4>
+                 <form id="addReviewForm">
+                    <input type="hidden" id="reviewCarId" name="reviewCarId">
+                    <div class="form-group">
+                        <label for="rating">Rating (1-5):</label>
+                        <select id="rating" name="rating" required>
+                            <option value="5">★★★★★ (Excellent)</option>
+                            <option value="4">★★★★☆ (Good)</option>
+                            <option value="3">★★★☆☆ (Average)</option>
+                            <option value="2">★★☆☆☆ (Fair)</option>
+                            <option value="1">★☆☆☆☆ (Poor)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Comment:</label>
+                        <textarea id="comment" name="comment" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-secondary">Submit Review</button>
+                 </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Car Renting System. All rights reserved.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

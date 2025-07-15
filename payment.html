@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Car Renting System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Complete Your Payment</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="car-list.html">Car List</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container page-container">
+        <section id="payment-section" class="form-card">
+            <h2>Order Summary (Rental ID: <span id="summary-rental-id">Pending</span>)</h2>
+            <div id="order-summary-details">
+                <p><strong>Car:</strong> <span id="summary-car-model"></span> (CarID: <span id="summary-car-id"></span>)</p>
+                <p><strong>Rental Period:</strong> <span id="summary-rental-dates"></span> (<span id="summary-rental-days"></span> days)</p>
+                <p>Base Price/Day: $<span id="summary-price-per-day"></span></p>
+                <p>Subtotal (Base Rental): $<span id="summary-base-price"></span></p>
+                <p id="summary-eco-discount-line" class="eco-info" style="display:none;">Eco Discount (<span id="summary-eco-discount-rate"></span>%): <span class="discount-amount">-$<span id="summary-eco-discount-amount"></span></span></p>
+                <p>Delivery Fee: $<span id="summary-delivery-fee">0.00</span></p>
+                <p class="total-due"><strong>Total Amount Due: $<span id="summary-total-amount"></span></strong></p>
+            </div>
+
+            <h2>Choose Payment Method</h2>
+            <form id="paymentForm">
+                <div class="form-group payment-options">
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="Credit Card" checked> Pay with Credit/Debit Card
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="Cash"> Pay in Cash (at branch)
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="Bank Transfer"> Bank Transfer (Details on Invoice)
+                    </label>
+                </div>
+
+                <div id="card-details-group" class="form-group-collapsible">
+                    <h3>Card Details</h3>
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number:</label>
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="XXXX XXXX XXXX XXXX" pattern="\d{13,19}" title="Enter 13-19 digit card number">
+                    </div>
+                    <div class="form-group">
+                        <label for="expiryDate">Expiry Date (MM/YY):</label>
+                        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" pattern="(0[1-9]|1[0-2])\/\d{2}" title="MM/YY format">
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="XXX" pattern="\d{3,4}" title="3 or 4 digit CVV">
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-primary">Confirm Payment & Book</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Car Renting System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Renting System</title>
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Add a favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container header-flex">
+            <h1>Car Renting System</h1>
+            <nav>
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="car-list.html">Available Cars</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-flex"></div>
+                <div class="hero-content">
+                    <h2>Drive Your Dream Car Today</h2>
+                    <p>Discover a wide range of vehicles for every occasion. Easy booking, affordable prices, and 24/7 support.</p>
+                    <a href="car-list.html" class="btn-primary">Browse Cars</a>
+                </div>
+                <div class="hero-image">
+                    <img src="OIP.jpeg" alt="Luxury car" />
+                </div>
+            </div>
+            <!-- Add a search bar -->
+            <div class="container search-bar">
+                <form id="searchForm">
+                    <input type="text" placeholder="Search by make, model, or location" name="query">
+                    <input type="date" name="pickup-date" required>
+                    <input type="date" name="return-date" required>
+                    <button type="submit" class="btn-primary">Search</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features container">
+            <h2>Why Choose Us?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="images/selection.svg" alt="" aria-hidden="true">
+                    <h3>Wide Selection</h3>
+                    <p>Choose from economy to luxury vehicles to suit every need and budget.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="images/booking.svg" alt="" aria-hidden="true">
+                    <h3>Easy Booking</h3>
+                    <p>Book your car online in just a few clicks with instant confirmation.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="images/support.svg" alt="" aria-hidden="true">
+                    <h3>24/7 Support</h3>
+                    <p>Our support team is available around the clock to assist you.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="images/insurance.svg" alt="" aria-hidden="true">
+                    <h3>Comprehensive Insurance</h3>
+                    <p>Drive with peace of mind with our full insurance coverage options.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Cars Section -->
+        <section class="popular-cars container">
+            <h2>Popular Cars</h2>
+            <div class="cars-grid">
+                <div class="car-card">
+                    <img src="Toyota Camry.jpeg" alt="Toyota Camry">
+                    <h3>Toyota Camry</h3>
+                    <p>From $40/day</p>
+                    <a href="car-details.html?id=1" class="btn-secondary">View Details</a>
+                </div>
+                <div class="car-card">
+                    <img src="bmw.jpeg" alt="BMW 5 Series">
+                    <h3>BMW 5 Series</h3>
+                    <p>From $90/day</p>
+                    <a href="bmw-details.html" class="btn-secondary">View Details</a>
+                </div>
+                <div class="car-card">
+                    <img src="honda cr.jpeg" alt="Honda CR-V">
+                    <h3>Honda CR-V</h3>
+                    <p>From $55/day</p>
+                    <a href="honda-details.html?id=3" class="btn-secondary">View Details</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Our Customers Say</h2>
+                <div class="testimonials-grid">
+                    <blockquote>
+                        <p>"The booking process was seamless and the car was in perfect condition. Highly recommended!"</p>
+                        <footer>- Sarah M.</footer>
+                    </blockquote>
+                    <blockquote>
+                        <p>"Great selection and excellent customer service. Will rent again!"</p>
+                        <footer>- James K.</footer>
+                    </blockquote>
+                    <blockquote>
+                        <p>"Affordable prices and very convenient. The support team was very helpful."</p>
+                        <footer>- Priya S.</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq container" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <details>
+                    <summary>What documents do I need to rent a car?</summary>
+                    <p>You need a valid driver's license, ID, and a credit card.</p>
+                </details>
+                <details>
+                    <summary>Is insurance included in the rental price?</summary>
+                    <p>Basic insurance is included. Additional coverage is available at checkout.</p>
+                </details>
+                <details>
+                    <summary>Can I cancel my booking?</summary>
+                    <p>Yes, you can cancel up to 24 hours before pickup for a full refund.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="newsletter">
+            <div class="container newsletter-flex">
+                <div>
+                    <h2>Stay Updated</h2>
+                    <p>Subscribe to our newsletter for the latest offers and updates.</p>
+                </div>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact container" id="contact">
+            <h2>Contact Us</h2>
+            <form class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <p><strong>Email:</strong> support@carrentingsystem.com</p>
+                <p><strong>Phone:</strong> +1 234 567 8900</p>
+                <p><strong>Address:</strong> 123 Main St, City, Country</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-flex">
+            <p>&copy; 2025 Car Renting System. All rights reserved.</p>
+            <nav>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </nav>
+            <div class="social-links">
+                <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="images/twitter.svg" alt="Twitter"></a>
+                <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>

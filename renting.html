@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Your Rental - Car Renting System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/renting.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Confirm Your Rental</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="car-list.html">Car List</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container page-container">
+        <section id="rental-details-form" class="form-card">
+            <h2>Rental Information</h2>
+            <div id="car-summary">
+                <h3>Car: <span id="selected-car-model-year"></span></h3>
+                <img id="selected-car-image-renting" src="images/placeholder-car.png" alt="Selected Car">
+                <p>Price per day: $<span id="selected-car-price"></span>
+                   <span id="eco-discount-applied-info" class="eco-info"></span>
+                </p>
+            </div>
+
+            <form id="rentalForm">
+                <input type="hidden" id="rentalCarId" name="carId">
+                <input type="hidden" id="rentalBasePricePerDay" name="basePricePerDay">
+                <input type="hidden" id="rentalIsEco" name="isEco">
+                <input type="hidden" id="rentalEcoDiscountRate" name="ecoDiscountRate">
+
+                <div class="form-group">
+                    <label for="name">Full Name (for Rental):</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10,15}" title="Enter a valid phone number (10-15 digits)" required>
+                </div>
+                <div class="form-group">
+                    <label for="pickupDate">Rental Start Date:</label>
+                    <input type="date" id="pickupDate" name="pickupDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="returnDate">Rental End Date:</label>
+                    <input type="date" id="returnDate" name="returnDate" required>
+                </div>
+
+                <h3>Pickup/Delivery Option</h3>
+                <div class="form-group">
+                    <label for="deliveryOption">Choose an option:</label>
+                    <select id="deliveryOption" name="deliveryOption">
+                        <option value="pickup">Pickup from branch</option>
+                        <option value="delivery">Deliver to my location (Extra Fee: $<span id="delivery-fee-display">25</span>)</option>
+                    </select>
+                </div>
+                <input type="hidden" id="deliveryFeeValue" name="deliveryFeeValue" value="0">
+
+
+                <div id="delivery-address-group" class="form-group" style="display:none;">
+                    <label for="deliveryAddress">Delivery Address (Street, City, Postal Code):</label>
+                    <textarea id="deliveryAddress" name="deliveryAddress" rows="3"></textarea>
+                    <small>Ensure address is accurate. We'll call to confirm delivery time.</small>
+                </div>
+                
+                <div id="pickup-location-group" class="form-group">
+                    <label for="pickupLocationNotes">Preferred Pickup Branch/Point:</label>
+                    <input type="text" id="pickupLocationNotes" name="pickupLocationNotes" placeholder="e.g., Downtown Branch, Airport Kiosk A">
+                </div>
+
+                <button type="submit" class="btn-primary">Proceed to Payment</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Car Renting System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

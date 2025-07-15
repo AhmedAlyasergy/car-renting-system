@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Invoice - Car Renting System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/invoice.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Rental Invoice/Confirmation</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">My Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container page-container">
+        <section id="invoice-details" class="invoice-card">
+            <div id="invoice-header">
+                <!-- JS will populate: e.g., <h2>Booking Confirmation - RENT-123456</h2> -->
+            </div>
+            
+            <div class="invoice-section">
+                <h3>Renter Information (UserID: <span id="renter-user-id" class="detail-value">N/A</span>)</h3>
+                <p>Name: <span id="renter-name" class="detail-value"></span></p>
+                <p>Email: <span id="renter-email" class="detail-value"></span></p>
+                <p>Phone: <span id="renter-phone" class="detail-value"></span></p>
+            </div>
+
+            <div class="invoice-section">
+                <h3>Car Details (CarID: <span id="invoice-car-id" class="detail-value"></span>)</h3>
+                <p>Model: <span id="car-model-invoice" class="detail-value"></span></p>
+                <p>Rental Period: <span id="rental-period-invoice" class="detail-value"></span> (<span id="rental-days-invoice" class="detail-value"></span> days)</p>
+            </div>
+
+            <div class="invoice-section" id="delivery-info-section-invoice" style="display:none;">
+                <h3>Delivery Information</h3>
+                <p>Delivery Address: <span id="delivery-address-display-invoice" class="detail-value"></span></p>
+                 <p><small>Our team will contact you to confirm the exact delivery time. Please ensure someone is available.</small></p>
+            </div>
+             <div class="invoice-section" id="pickup-info-section-invoice">
+                <h3>Pickup Information</h3>
+                <p>Pickup Location/Notes: <span id="pickup-location-display-invoice" class="detail-value">Main Branch</span></p>
+            </div>
+
+            <div class="invoice-section payment-summary-section">
+                <h3>Payment Summary (RentalID: <span id="invoice-rental-id" class="detail-value"></span>)</h3>
+                <p>Base Rental Cost (Subtotal): $<span id="base-cost-invoice" class="detail-value"></span></p>
+                <p id="eco-discount-line-invoice" class="eco-info" style="display:none;">Eco Discount Applied: <span class="discount-amount">-$<span id="eco-discount-amount-invoice" class="detail-value"></span></span></p>
+                <p>Delivery Fee: $<span id="payment-delivery-fee-invoice" class="detail-value">0.00</span></p>
+                <p class="total-highlight"><strong>Total Amount: $<span id="total-amount-invoice" class="detail-value"></span></strong></p>
+                <p>Payment Method: <span id="payment-method-invoice" class="detail-value"></span></p>
+                <p>Payment Status: <span id="payment-status-invoice" class="detail-value payment-status-highlight"></span> (PaymentID: <span id="invoice-payment-id" class="detail-value"></span>)</p>
+            </div>
+
+            <div id="payment-instructions-invoice" class="payment-instructions">
+                <!-- JS will populate based on payment method and status -->
+            </div>
+
+            <div class="invoice-actions">
+                <button onclick="window.print()" class="btn-primary"><i class="icon-print"></i> Print Invoice</button>
+                <a href="index.html" class="btn-secondary">Back to Home</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Car Renting System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car List - Car Renting System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/car-list.css" media="all">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Available Cars for Rent</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container page-container">
+        <section id="filters-section">
+            <h2>Filter Cars</h2>
+            <form id="carFiltersForm">
+                <div class="filter-group">
+                    <label for="priceRange">Max Price/Day ($):</label>
+                    <div class="range-slider">
+                        <input type="range" id="priceRange" name="priceRange" min="100" max="1000" value="1000">
+                        <output id="priceRangeOutput">1000</output>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label for="fuelType">Fuel Type:</label>
+                    <select id="fuelType" name="fuelType">
+                        <option value="">All</option>
+                        <option value="petrol">Petrol</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="electric">Electric</option>
+                        <option value="hybrid">Hybrid</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="seatingCapacity">Seating Capacity:</label>
+                    <select id="seatingCapacity" name="seatingCapacity">
+                        <option value="">All</option>
+                        <option value="2">2 Seats</option>
+                        <option value="4">4 Seats</option>
+                        <option value="5">5 Seats</option>
+                        <option value="7">7+ Seats</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="carBrand">Car Brand:</label>
+                    <select id="carBrand" name="carBrand">
+                        <option value="">All</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="BMW">BMW</option>
+                        <option value="Land Rover">Land Rover</option>
+                        <option value="Mazda">Mazda</option>
+                        <option value="Tesla">Tesla</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="transmissionType">Transmission:</label>
+                    <select id="transmissionType" name="transmissionType">
+                        <option value="">All</option>
+                        <option value="automatic">Automatic</option>
+                        <option value="manual">Manual</option>
+                    </select>
+                </div>
+                 <div class="filter-group">
+                    <label for="carCategory">Category:</label>
+                    <select id="carCategory" name="carCategory">
+                        <option value="">All</option>
+                        <!-- Options will be populated by JS based on MOCK_CAR_CATEGORIES -->
+                    </select>
+                </div>
+                <div class="filter-group checkbox-group">
+                    <input type="checkbox" id="ecoFriendlyOnly" name="ecoFriendlyOnly">
+                    <label for="ecoFriendlyOnly" class="checkbox-label">Show Eco-Friendly Only</label>
+                </div>
+                <div class="filter-buttons">
+                    <button type="button" id="applyFiltersBtn" class="btn-primary">Apply Filters</button>
+                    <button type="reset" id="resetFiltersBtn" class="btn-secondary">Reset Filters</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="car-listing">
+            <h2>Our Cars</h2>
+            <div class="car-grid" id="car-grid-container">
+                <!-- Car items will be dynamically populated by JS -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Car Renting System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,133 @@
+/* css/subscriptions.css */
+
+#subscription-intro h2 { /* Uses .intro-card from styles.css */
+    text-align: center;
+    font-size: 1.8rem;
+}
+#subscription-intro p {
+    text-align: center;
+    font-size: 1.05em;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+}
+
+#subscription-plans-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.plan-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* For popular badge */
+}
+.plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.plan-card.popular-plan {
+    border-top: 5px solid #e8491d; /* Orange top border for popular */
+}
+.popular-badge {
+    position: absolute;
+    top: -15px; /* Position above the card */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e8491d;
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.85em;
+    border-radius: 15px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.plan-card h3 {
+    color: #35424a;
+    font-size: 1.5em;
+    margin-top: 10px; /* Space if popular badge is present */
+    margin-bottom: 10px;
+}
+.plan-card .price {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #e8491d;
+    margin: 10px 0 20px 0;
+}
+.plan-card .price span {
+    font-size: 0.5em;
+    font-weight: normal;
+    color: #777;
+}
+.plan-card .features-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+    text-align: left;
+    flex-grow: 1; /* Pushes button to bottom */
+}
+.plan-card .features-list li {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    color: #555;
+    padding-left: 25px;
+    position: relative;
+}
+.plan-card .features-list li::before {
+    content: '✔'; /* Checkmark icon */
+    color: #28a745; /* Green */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.plan-card .subscribe-button, .plan-card .contact-sales-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.05em;
+    margin-top: auto; /* Ensures button is at the bottom */
+}
+
+.subscription-faq {
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.subscription-faq h3 {
+    color: #35424a;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+.subscription-faq details {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+.subscription-faq summary {
+    font-weight: 500;
+    cursor: pointer;
+    color: #35424a;
+}
+.subscription-faq details[open] summary {
+    color: #e8491d;
+    margin-bottom: 8px;
+}
+.subscription-faq p {
+    font-size: 0.95em;
+    color: #555;
+    margin: 0;
+    padding-left: 10px;
+}

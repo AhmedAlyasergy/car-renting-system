@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Car Renting System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="admin.html" class="active">Dashboard</a></li>
+                <li><a href="index.html">Main Site</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="admin-container">
+        <section class="admin-section" id="user-management">
+            <h2>Manage Users (Users Table)</h2>
+            <div class="table-responsive">
+                <table class="admin-table" id="admin-users-table">
+                    <thead>
+                        <tr>
+                            <th>UserID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- User rows dynamically inserted -->
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn-primary" id="admin-add-user-btn">Add New User (Conceptual)</button>
+        </section>
+
+        <section class="admin-section" id="car-category-management">
+            <h2>Manage Car Categories (CarCategories Table)</h2>
+            <div class="table-responsive">
+                <table class="admin-table" id="admin-categories-table">
+                    <thead>
+                        <tr>
+                            <th>CategoryID</th>
+                            <th>CategoryName</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Category rows dynamically inserted -->
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn-primary" id="admin-add-category-btn">Add New Category (Conceptual)</button>
+        </section>
+
+        <section class="admin-section" id="car-management">
+            <h2>Manage Cars (Cars Table)</h2>
+            <div class="table-responsive">
+                <table class="admin-table" id="admin-cars-table">
+                    <thead>
+                        <tr>
+                            <th>CarID</th>
+                            <th>Model</th>
+                            <th>Brand</th>
+                            <th>Year</th>
+                            <th>Status</th>
+                            <th>Price/Day</th>
+                            <th>Cat.ID</th>
+                            <th>Fuel</th>
+                            <th>Seats</th>
+                            <th>Trans.</th>
+                            <th>Eco?</th>
+                            <th>EcoDisc%</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Car rows dynamically inserted -->
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn-primary" id="admin-show-add-car-form-btn">Add/Edit Car</button>
+            <div id="admin-add-car-form-container" class="admin-form-container" style="display:none;">
+                <h4>Add/Edit Car</h4>
+                <form id="carAdminForm">
+                    <input type="hidden" id="adminCarId" name="adminCarId">
+                    <div class="form-group"><label>Model: <input type="text" id="adminModel" name="model" required></label></div>
+                    <div class="form-group"><label>Brand: <input type="text" id="adminBrand" name="brand" required></label></div>
+                    <div class="form-group"><label>Year: <input type="number" id="adminYear" name="year" required min="1990"></label></div>
+                    <div class="form-group"><label>Price/Day: <input type="number" step="0.01" id="adminPrice" name="pricePerDay" required></label></div>
+                    <div class="form-group">
+                        <label>CategoryID: <select id="adminCategoryIdSelect" name="categoryId" required></select></label>
+                    </div>
+                    <div class="form-group"><label>Status: <select id="adminStatus" name="status"><option value="available">Available</option><option value="rented">Rented</option><option value="maintenance">Maintenance</option></select></label></div>
+                    <div class="form-group"><label>Fuel Type: <select id="adminFuelType" name="fuelType"><option value="petrol">Petrol</option><option value="diesel">Diesel</option><option value="electric">Electric</option><option value="hybrid">Hybrid</option></select></label></div>
+                    <div class="form-group"><label>Seats: <input type="number" id="adminSeats" name="seatingCapacity" value="5" min="1"></label></div>
+                    <div class="form-group"><label>Transmission: <select id="adminTransmission" name="transmissionType"><option value="automatic">Automatic</option><option value="manual">Manual</option></select></label></div>
+                    <div class="form-group checkbox-group"><input type="checkbox" id="adminIsEco" name="isEcoFriendly"><label for="adminIsEco">Is Eco-Friendly</label></div>
+                    <div class="form-group"><label>Eco Discount %: <input type="number" id="adminEcoDiscount" name="ecoDiscountPercentage" value="0" min="0" max="100"></label></div>
+                    <button type="submit" class="btn-primary">Save Car</button>
+                    <button type="button" id="admin-cancel-car-form-btn" class="btn-secondary">Cancel</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="admin-section" id="rental-management">
+            <h2>Manage Rentals (Rentals Table)</h2>
+            <div class="table-responsive">
+                <table class="admin-table" id="admin-rentals-table">
+                    <thead>
+                        <tr>
+                            <th>RentalID</th>
+                            <th>UserID</th>
+                            <th>CarID</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Total Price</th>
+                            <th>Status</th>
+                            <th>Delivery Fee</th>
+                            <th>Delivery Address</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="admin-section" id="payment-management">
+            <h2>Manage Payments (Payments Table)</h2>
+            <div class="table-responsive">
+                 <table class="admin-table" id="admin-payments-table">
+                    <thead>
+                        <tr>
+                            <th>PaymentID</th>
+                            <th>RentalID</th>
+                            <th>PaymentDate</th>
+                            <th>Amount</th>
+                            <th>Method</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="admin-section" id="review-management">
+            <h2>Manage Car Reviews (CarReviews Table)</h2>
+            <div class="table-responsive">
+                <table class="admin-table" id="admin-reviews-table">
+                    <thead>
+                        <tr>
+                            <th>ReviewID</th>
+                            <th>UserID</th>
+                            <th>CarID</th>
+                            <th>Rating</th>
+                            <th>Comment</th>
+                            <th>ReviewDate</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section class="admin-section" id="subscription-management">
+            <h2>Manage Subscriptions (Conceptual)</h2>
+            <p><em>(Full backend required) Interface for managing user subscriptions, plans, and billing cycles.</em></p>
+        </section>
+        <section class="admin-section" id="rewards-management">
+            <h2>Manage Loyalty Rewards (Conceptual)</h2>
+            <p><em>(Full backend required) Interface for setting reward point rules, viewing user points, and managing redemption options.</em></p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Car Renting System. Admin Panel.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+/* css/renting.css */
+
+#rental-details-form h2 { /* Already styled by .form-card h2 in styles.css */
+    text-align: center;
+}
+
+#car-summary {
+    background-color: #f6f8fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+#car-summary img#selected-car-image-renting {
+    max-width: 250px;
+    border-radius: 5px;
+    margin: 10px auto;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+#car-summary h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #35424a;
+    font-size: 1.3em;
+}
+#car-summary p {
+    font-size: 1.1em;
+    color: #e8491d;
+    font-weight: bold;
+    margin: 5px 0;
+}
+#car-summary .eco-info { /* Inherited from styles.css */
+    font-weight: normal;
+    display: block;
+}
+
+
+#rentalForm h3 { /* For "Pickup/Delivery Option" heading */
+    font-size: 1.2em;
+    color: #35424a;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+#rentalForm .form-group small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.85em;
+    color: #777;
+}
+
+#rentalForm .btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    margin-top: 20px;
+}

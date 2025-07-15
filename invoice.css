@@ -1,0 +1,116 @@
+/* css/invoice.css */
+
+#invoice-details { /* This uses .invoice-card from styles.css */
+    border: 1px solid #ddd; /* Slightly more prominent border for invoice */
+}
+
+#invoice-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e8491d; /* Orange accent */
+}
+#invoice-header h2 {
+    font-size: 1.8rem;
+    color: #e8491d;
+    margin:0;
+}
+
+.invoice-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+.invoice-section h3 {
+    margin-top: 0;
+    color: #35424a;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    font-size: 1.2em;
+}
+.invoice-section p {
+    margin: 6px 0;
+    line-height: 1.7;
+    color: #444;
+}
+.invoice-section p .detail-value { /* For the actual data spans */
+    font-weight: 500;
+    color: #333;
+}
+.invoice-section small {
+    font-size: 0.9em;
+    color: #666;
+    display: block;
+    margin-top: 5px;
+}
+
+.payment-summary-section .total-highlight strong {
+    font-size: 1.3em;
+    color: #e8491d;
+}
+.payment-summary-section .payment-status-highlight {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.payment-summary-section .eco-info { /* From styles.css */
+    font-weight: 500;
+}
+.payment-summary-section .discount-amount { /* From styles.css */
+    font-weight: 500;
+}
+
+
+.payment-instructions {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #e6f7ff; /* Light blue for instructions */
+    border-left: 5px solid #007bff; /* Blue accent */
+    border-radius: 5px;
+}
+.payment-instructions p {
+    margin: 0;
+    line-height: 1.7;
+}
+.payment-instructions strong {
+    color: #0056b3;
+}
+
+
+.invoice-actions {
+    margin-top: 30px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+.invoice-actions .btn-primary, .invoice-actions .btn-secondary {
+    margin: 0 10px;
+    padding: 12px 25px;
+}
+.invoice-actions .icon-print { /* Placeholder for icon font */
+    margin-right: 8px;
+}
+
+@media print {
+    body {
+        background-color: #fff;
+    }
+    header, footer, .invoice-actions {
+        display: none;
+    }
+    main.container, .invoice-card {
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+    .invoice-section {
+        border: 1px solid #ccc;
+        background-color: #fff;
+        page-break-inside: avoid;
+    }
+}
